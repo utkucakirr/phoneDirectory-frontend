@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-12">
+        <label>Select a person to delete.</label>
+        <ul class="list-group">
+            <li (click)="setPerson(person)" *ngFor="let person of persons" [class]="getCurrentPerson(person)">{{person.personName}} {{person.personSurname}}</li>
+        </ul>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Are you sure about deleting this person?
+        </label>
+      </div>
+      <button type="button" class="btn btn-outline-danger" (click)="delete()">Delete</button>
+</div>    

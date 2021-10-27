@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-4">
+        <label>Select a person to update.</label>
+        <ul class="list-group">
+            <li (click)="setPerson(person)" *ngFor="let person of persons" [class]="getCurrentPerson(person)">{{person.personName}} {{person.personSurname}}</li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Update Person</h5></div>
+            <div class="card-body">
+                <form [formGroup]="personUpdateForm">
+                    <!-- <div class="mb-4">
+                        <label for="personId">Person Id</label>
+                        <div class="form-group">
+                            <input type="number"
+                            id="personId"
+                            formControlName="personId" class="form-control"
+                            placeholder="Person Id" [value]="getCurrentPersonId()">
+                        </div>
+                    </div> -->
+                    <div class="mb-4">
+                        <label for="personName">Person name</label>
+                        <div class="form-group">
+                            <input type="text"
+                            id="personName"
+                            formControlName="personName" class="form-control"
+                            placeholder="Person name" [value]="getCurrentPersonName()"/>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="personSurname">Person surname</label>
+                        <div class="form-group">
+                            <input type="text"
+                            id="personSurname"
+                            formControlName="personSurname" class="form-control"
+                            placeholder="Person surname" [value]="getCurrentPersonSurname()"/>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="number">Person number</label>
+                        <div class="form-group">
+                            <input type="number"
+                            id="number"
+                            formControlName="number" class="form-control"
+                            placeholder="Person number" [value]="getCurrentPersonNumber()"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" (click)="update()" >Update Person</button>
+            </div>
+        </div>
+</div>
